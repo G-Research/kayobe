@@ -26,6 +26,10 @@
         kolla_provision_interface: "eth8"
         kolla_inspector_dnsmasq_interface: "eth9"
         kolla_tunnel_interface: "eth10"
+        kolla_ceph_storage_interface: "eth11"
+        kolla_ceph_cluster_interface: "eth12"
+        kolla_swift_storage_interface: "eth13"
+        kolla_swift_replication_interface: "eth14"
 
     - name: Add a compute host to the inventory
       add_host:
@@ -321,6 +325,10 @@
               - kolla_external_vip_interface
               - storage_interface
               - cluster_interface
+              - ceph_storage_interface
+              - ceph_cluster_interface
+              - swift_storage_interface
+              - swift_replication_interface
               - provision_interface
               - ironic_dnsmasq_interface
               - dns_interface
@@ -460,6 +468,10 @@
                 ironic_dnsmasq_interface: "eth9"
                 dns_interface: "eth5"
                 tunnel_interface: "eth10"
+                ceph_storage_interface: "eth11"
+                ceph_cluster_interface: "eth12"
+                swift_storage_interface: "eth13"
+                swift_replication_interface: "eth14"
                 kolla_external_vip_interface: "eth1"
                 neutron_external_interface: "eth6,eth7"
                 neutron_bridge_name: "br0,br1"
